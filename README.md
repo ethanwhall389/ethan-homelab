@@ -1,6 +1,7 @@
 # Ethan's Homelab
 
 ![alt text](<Windows Server Active Directory/screenshots/active-directory.png>)
+
 The purpose of this repo is to document my journey and the processes I use through building homelab projects to aid my learning in the world of IT. I actively work on these projects in my free time, mostly in early mornings or over weekends.
 
 # Completed Labs:
