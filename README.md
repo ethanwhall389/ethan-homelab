@@ -11,7 +11,7 @@ The purpose of this repo is to document my journey and the processes I use throu
 # About
 
 Hi, I'm Ethan! I love messing with tech and breaking things, learning from those broken things and hopefully not making the same mistake twice!
-I live in South Carolina with my wife and two children. In my spare time (when I'm not working on these labs!) I enjoy reading, playing the guitar, and spending time outdoors with my family.
+I live in South Carolina with my wife and two children. In my spare time (when I'm not working on these labs!) I enjoy reading, playing the guitar, attending my church, and spending time outdoors with my family.
 
 # Contact
 
