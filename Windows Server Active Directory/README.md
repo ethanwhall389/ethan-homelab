@@ -57,11 +57,11 @@ Each section should contain steps taken, why certain decisions were made, screen
 - Using the IP address assigned to the Domain Controller, assigned it as the DNS server for the new client machine.
 - Pinging the Domain Controller worked as expected.
 - ❌Performing an nslookup of the Domain Controller's domain did not work properly. Constantly returned a "non-existent domain" error.
-  - Spent large amount of time troubleshooting. Made sure Active Directory was installed properly and that the proper SRV records were configured in DNS Manager on the Domain Controller.
+  - Spent a large amount of time troubleshooting. Made sure Active Directory was installed properly and that the proper SRV records were configured in DNS Manager on the Domain Controller.
   - Eventually realized that the VMs were both using NAT mode, which gave them both identical local IP addresses. Switched to "Bridged" mode, which made both VMs an independent device on the LAN, assigning unique IPs to each.
-  - Reconfigured the IP and DNS for both devices. Still recieved the same error of "non-existent domain".
+  - Reconfigured the IP and DNS for both devices. Still received the same error of "non-existent domain".
   - Realized that in performing the nslookup, the client device was referencing the local router for DNS, instead of the Domain Controller. This was because both the client and Domain Controller were learning and preferring IPv6 DNS servers from the router, even though IPv6 was turned off in settings.
-  - The fix was to completely disable IPv6 on the NIC of both devices through the Network and Sharing Center.
+  - The fix was to completely disable IPv6 on the NIC of both devices through the Network and Sharing Center, making the only DNS server available the Domain Controller.
 
 ### 5. Applying Group Policies
 
