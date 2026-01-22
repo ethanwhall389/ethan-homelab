@@ -1,1 +1,1 @@
-# ethan-homelab
+# Ethan's Homelab
