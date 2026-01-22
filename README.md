@@ -6,7 +6,7 @@ The purpose of this repo is to document my journey and the processes I use throu
 
 # Completed Labs:
 
-[text](<Windows Server Active Directory>)
+[Windows Server Active Directory](<Windows Server Active Directory>)
 
 # Contact
 

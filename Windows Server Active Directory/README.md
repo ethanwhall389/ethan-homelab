@@ -34,3 +34,5 @@ Each section should contain steps taken, why certain decisions were made, screen
 ### 5. SysAdmin Practice
 
 - Resetting pwds, managing permissions. . .
+
+## Wrap up Thoughts
