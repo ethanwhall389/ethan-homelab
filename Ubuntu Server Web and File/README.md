@@ -46,5 +46,5 @@ Each section should contain steps taken, why certain decisions were made, screen
     ![alt text](screenshots/dashboard-conf.png)
 
    ![alt text](screenshots/dashboard-conf-2.png)
-    - ❌ Had to add the Directory Index line to tell the site to load dashboard.html instead of loading the whole directory listing.
+    - Had to add the Directory Index line to tell the site to load dashboard.html instead of loading the whole directory listing.
 - Installed `stress` to stress test the memory and CPU to see if the dashboard was working as expected. 
