@@ -33,6 +33,7 @@ Each section should contain steps taken, why certain decisions were made, screen
 - Enabled ufw firewall and added a rule to allow SSH.
 - Installed neofetch and htop for system info and diagnostics.
 - Set up a second user with limited privelages
+
     ![alt text](screenshots/adduser.png)
 
 ### 3. Apache Web Server Setup
