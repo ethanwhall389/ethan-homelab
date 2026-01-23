@@ -8,12 +8,23 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
-    padding: 20px;
+    padding: 0px;
 }
 
-.container, .main-cont {
+.container {
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.main-cont {
+    padding-top: 25px;
+    padding-bottom: 25px;    
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 h1 {
@@ -32,8 +43,10 @@ h1 {
 
 .button-cont {
     display: flex;
+    flex-direction: column;
     width: 100%;
     justify-content: center;
+    align-items: center;
 }
 
 .stat-card {

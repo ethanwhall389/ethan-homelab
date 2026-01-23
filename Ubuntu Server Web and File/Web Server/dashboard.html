@@ -50,7 +50,7 @@
             <button class="refresh-btn" onclick="fetchStats()">↻ Refresh Stats</button>
             <div class="last-update">
                 <p id="last-update"></p>
-                <p>Auto updates every 30 seconds</p>
+                <p>Auto updates every 5 seconds</p>
             </div>
         </div>
     </div>
@@ -59,7 +59,6 @@
         async function fetchStats() {
             try {
                 const res = await fetch('stats.php');
-                await console.log(res.text());
                 const data = await res.json();
                 await console.log(data);
                 updateUI(data);
@@ -106,7 +105,7 @@
 
         fetchStats(); // Initial fetch
 
-        setInterval(fetchStats, 30000); // Auto refresh every 30 seconds
+        setInterval(fetchStats, 5000); // Auto refresh every 5 seconds
             
 
 
