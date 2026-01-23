@@ -43,6 +43,7 @@
                 <div class="stat-label">System Uptime</div>
                 <div class="stat-value" style="font-size: 1.5em;" id="uptime-value">--</div>
                 <div class="info-text" id="hostname-info">Hostname: --</div>
+		<div class="info-text" id="ip-info">IP Address: --</div>
             </div>
 
         </div>
@@ -98,6 +99,7 @@
             // Update Uptime
             document.getElementById('uptime-value').textContent = data.uptime;
             document.getElementById('hostname-info').textContent = 'Hostname: ' + data.hostname;
+	    document.getElementById('ip-info').textContent = 'IP Address: ' + data.ip;
             
             // Update timestamp
             document.getElementById('last-update').textContent = 'Last updated: ' + data.timestamp;

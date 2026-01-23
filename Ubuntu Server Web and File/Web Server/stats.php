@@ -51,6 +51,10 @@ function getServerHostname() {
     return gethostname();
 };
 
+function getServerIP() {
+    return $_SERVER['SERVER_ADDR'];
+};
+
 
 //collect all stats
 
@@ -60,6 +64,7 @@ $stats = [
     'disk' => getDiskUsage(),
     'uptime' => getUptime(),
     'hostname' => getServerHostname(),
+    'ip' => getServerIP(),
     'timestamp' => date('Y-m-d H:i:s')
 ];
 
