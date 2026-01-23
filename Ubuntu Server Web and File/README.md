@@ -33,7 +33,7 @@ Each section should contain steps taken, why certain decisions were made, screen
 - Enabled ufw firewall and added a rule to allow SSH.
 - Installed neofetch and htop for system info and diagnostics.
 - Set up a second user with limited privelages
-    - ![alt text](screenshots/adduser.png)
+    ![alt text](screenshots/adduser.png)
 
 ### 3. Apache Web Server Setup
 - Installed apache2
@@ -43,6 +43,7 @@ Each section should contain steps taken, why certain decisions were made, screen
 - Installed `php` and `libapache2-mod-php` to allow PHP to run on the server.
 - Set up a virtual host with a custom domain for the site by creating a new .conf file
     ![alt text](screenshots/dashboard-conf.png)
-    ![alt text](screenshots/dashboard-conf-2.png)
+
+   ![alt text](screenshots/dashboard-conf-2.png)
     - ❌ Had to add the Directory Index line to tell the site to load dashboard.html instead of loading the whole directory listing.
 - Installed `stress` to stress test the memory and CPU to see if the dashboard was working as expected. 
