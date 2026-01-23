@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubuntu Server Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-cont">
+        <h1>Server Dashboard</h1>
+        <div class="stats-grid">
+
+            <div class="stat-card">
+                <div class="stat-label">CPU Load
+                    <div class="stat-value" id="cpu-value">--</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="cpu-bar"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-label">Memory
+                    <div class="stat-value" id="memory-value">--</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="memory-bar"> </div>
+                    </div>
+                    <div class="info-text" id="memory-info">-- GB / -- GB</div>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-label">Disk Usage</div>
+                <div class="stat-value" id="disk-value">--</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="disk-bar"></div>
+                </div>
+                <div class="info-text" id="disk-info">-- GB / -- GB</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-label">System Uptime</div>
+                <div class="stat-value" style="font-size: 1.5em;" id="uptime-value">--</div>
+                <div class="info-text" id="hostname-info">Hostname: --</div>
+            </div>
+
+        </div>
+        <div class="button-cont">
+            <button class="refresh-btn" onclick="fetchStats()">↻ Refresh Stats</button>
+            <div class="last-update">
+                <p id="last-update"></p>
+                <p>Auto updates every 30 seconds</p>
+            </div>
+        </div>
+    </div>
+
+     <script defer>
+        async function fetchStats() {
+            try {
+                const res = await fetch('stats.php');
+                await console.log(res.text());
+                const data = await res.json();
+                await console.log(data);
+                updateUI(data);
+            }
+            catch (error) {
+                console.error('Error fetching stats:', error);
+            }
+        }
+
+
+        // const data = {
+        //     'cpu': 100, 
+        //     'memory': {'percent': 50, 'used': '4GB', 'total': '8GB'},
+        //     'disk': {'percent': 70, 'used': '70GB', 'total': '100GB'},
+        //     'uptime': '3 days, 4 hours',
+        //     'hostname': 'ubuntu-server',
+        //     'timestamp': new Date().toLocaleString()
+        // }
+
+        function updateUI(data) {
+            // Update CPU
+            document.getElementById('cpu-value').textContent = data.cpu + '%';
+            document.getElementById('cpu-bar').style.width = Math.min(data.cpu, 100) + '%';
+            
+            // Update Memory
+            document.getElementById('memory-value').textContent = data.memory.percent + '%';
+            document.getElementById('memory-bar').style.width = data.memory.percent + '%';
+            document.getElementById('memory-info').textContent = 
+                data.memory.used + ' GB / ' + data.memory.total + ' GB';
+            
+            // Update Disk
+            document.getElementById('disk-value').textContent = data.disk.percent + '%';
+            document.getElementById('disk-bar').style.width = data.disk.percent + '%';
+            document.getElementById('disk-info').textContent = 
+                data.disk.used + ' GB / ' + data.disk.total + ' GB';
+            
+            // Update Uptime
+            document.getElementById('uptime-value').textContent = data.uptime;
+            document.getElementById('hostname-info').textContent = 'Hostname: ' + data.hostname;
+            
+            // Update timestamp
+            document.getElementById('last-update').textContent = 'Last updated: ' + data.timestamp;
+        }
+
+        fetchStats(); // Initial fetch
+
+        setInterval(fetchStats, 30000); // Auto refresh every 30 seconds
+            
+
+
+    </script>
+</body>
+</html>
