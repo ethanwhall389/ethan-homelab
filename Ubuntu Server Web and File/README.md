@@ -21,8 +21,6 @@ Ubuntu Server, VirtualBox, SSH, apache, php, html
 
 ### 1. Installing Ubuntu Server in VirtualBox
 
-Each section should contain steps taken, why certain decisions were made, screenshots, problems and fixes, outcome.
-
 - Downloaded the official Ubuntu Server ISO.
 - Created a new VirtualBox VM and went through the typical Ubuntu Server install.
 
